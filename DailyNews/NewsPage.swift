@@ -11,11 +11,13 @@ class NewsData{
     var newsTitle: String
     var newsContent: String
     var newsPublication: String
+    var newsImage: String
     
-    init(newsTitle: String, newsContent: String, newsPublication: String) {
+    init(newsTitle: String, newsContent: String, newsPublication: String, newsImage: String) {
         self.newsTitle = newsTitle
         self.newsContent = newsContent
         self.newsPublication = newsPublication
+        self.newsImage = newsImage
     }
     
 }

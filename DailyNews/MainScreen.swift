@@ -36,6 +36,11 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         view.addSubview(collectionView!)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView?.frame = view.bounds
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         newsData.count
     }
@@ -51,10 +56,11 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     
-    
-    
     func populateNewsData(){
-        newsData.append(NewsData(newsTitle: "bla", newsContent: "ble", newsPublication: "blo"))
+        newsData.append(NewsData(newsTitle: "bla", newsContent: "ble", newsPublication: "blo", newsImage: "ble"))
+        newsData.append(NewsData(newsTitle: "BLA", newsContent: "ble", newsPublication: "blo", newsImage: "ble"))
+        newsData.append(NewsData(newsTitle: "BLO", newsContent: "ble", newsPublication: "blo", newsImage: "ble"))
+
     }
 }
 

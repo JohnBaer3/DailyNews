@@ -85,7 +85,7 @@ class NewsCVC: UICollectionViewCell {
         let titleFontWidth = 300
         let swipeFontWidth = 300
         
-        backgroundLabel.frame = CGRect(x: 0, y: height/2+50, width: height, height: 500)
+        backgroundLabel.frame = CGRect(x: 0, y: height/2+50, width: width, height: 500)
         titleLabel.frame = CGRect(x: width/2-titleFontWidth/2, y: height/2+40, width: titleFontWidth, height: 240)
         contentLabel.frame = CGRect(x: width/2-swipeFontWidth/2, y: height/2+220, width: swipeFontWidth, height: 150)
     }

@@ -19,12 +19,14 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         populateNewsData()
         
         configureCollectionView()
+        
+        startScrolling()
     }
     
     func configureCollectionView(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: view.frame.size.width,
+        layout.itemSize = CGSize(width: view.frame.size.width-5,
                                  height: view.frame.size.height-10)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
@@ -41,6 +43,12 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         collectionView?.frame = view.bounds
     }
     
+    func startScrolling(){
+        //Start a timer that animates the first cylinder getting filled
+        //When it fills, move collectionView to the next
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         newsData.count
     }
@@ -52,23 +60,20 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return newsCell
     }
 
-
-    
-    
     
     func populateNewsData(){
         newsData.append(NewsData(newsTitle: "Dr. Harold Bornstein, Trump's former personal physician, dead at 73",
-                                 newsContent: "Bornstein's death was announced on Thursday in a paid notice in The New York Times. The notice did not give a cause or say where he died, but said he passed away last Friday. \n Bornstein had served as Trump's physician for more than three decades, a position that thrust him into the national spotlight during and after the 2016 campaign \n ",
-                                 newsPublication: "The Washington Post",
-                                 newsImage: "guywalking.jpg"))
+                                 newsContent: "Bornstein's death was announced on Thursday in a paid notice in The New York Times. \n The notice did not give a cause or say where he died, but said he passed away last Friday.", //\n Bornstein had served as Trump's physician for more than three decades, a position that thrust him into the national spotlight during and after the 2016 campaign \n
+                                 newsPublication: "theWashingtonPostLogo",
+                                 newsImage: "trumpDoctor"))
         newsData.append(NewsData(newsTitle: "Surreal 'dome fountain' of lava bubbles up in Hawaii",
-                                 newsContent: "US Geological Survey officials captured what appears to be a 'dome fountain' of lava in the Halema'uma'u crater of Hawaii's Kilauea volcano",
-                                 newsPublication: "Bloomberg",
-                                 newsImage: "lavaThing.jpg"))
+                                 newsContent: "US Geological Survey officials captured what appears to be a 'dome fountain' of lava. \n  Found in the Halema'uma'u crater of Hawaii's Kilauea volcano",
+                                 newsPublication: "bloombergNewsLogo",
+                                 newsImage: "lavaThing"))
         newsData.append(NewsData(newsTitle: "New unemployment claims jump to nearly 1 million, the highest level since August",
-                                 newsContent: "The number of new unemployment claims filed jumped by 181,000 to 965,000 last week, the largest increase since the beginning of the pandemic. \n It was the highest number of new unemployment claims since August. \n An additional 284,000 claims were filed for the Pandemic Unemployment Assistance, the insurance for gig and self-employed workers.",
-                                 newsPublication: "Yahoo News",
-                                 newsImage: "personWalking.jpg"))
+                                 newsContent: "The number of new unemployment claims filed jumped by 181,000 to 965,000 last week, the largest increase since the beginning of the pandemic. \n It was the highest number of new unemployment claims since August.", // \n An additional 284,000 claims were filed for the Pandemic Unemployment Assistance, the insurance for gig and self-employed workers.
+                                 newsPublication: "yahooNewsLogo",
+                                 newsImage: "personWalking"))
     }
 }
 

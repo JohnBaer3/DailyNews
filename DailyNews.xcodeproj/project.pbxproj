@@ -132,8 +132,8 @@
 			children = (
 				CB9F1BC425AD18B900A40D9D /* Main.storyboard */,
 				CB9F1BC225AD18B900A40D9D /* MainScreen.swift */,
-				CB9F1C9925B0E31100A40D9D /* NewsPage.swift */,
 				CB9F1CA125B0E60B00A40D9D /* NewsCVC.swift */,
+				CB9F1C9925B0E31100A40D9D /* NewsPage.swift */,
 				CB9F1BBE25AD18B900A40D9D /* AppDelegate.swift */,
 				CB9F1BC025AD18B900A40D9D /* SceneDelegate.swift */,
 				CB9F1BC725AD18BB00A40D9D /* Assets.xcassets */,

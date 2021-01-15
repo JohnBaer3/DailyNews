@@ -12,6 +12,7 @@ class IntroAnimationVC: UIViewController {
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var dailyText: UILabel!
     @IBOutlet weak var newsText: UILabel!
+    @IBOutlet weak var forDateText: UILabel!
     
     var timer = Timer()
     var timerTime: Float = 0
@@ -34,13 +35,23 @@ class IntroAnimationVC: UIViewController {
         if timerTime < 3 && !firstAnimationDone{
             moveIt(dailyText, 0.5)
             moveIt(newsText, 0.5)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.invertColors()
             }
             firstAnimationDone = true
-        }else if timerTime > 3.5 && !secondAnimationDone{
+        }else if timerTime > 1.5 && !secondAnimationDone{
+            invertColors()
+            newsText.alpha = 0
+            dailyText.alpha = 0
+            forDateText.isHidden = false
             
-            
+            UIView.animate(withDuration: 0.95) { [weak self] in
+                self!.forDateText.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+             } completion: { _ in
+//                if self.countDownTimer > 1{
+//                    self.dailyText.transform = CGAffineTransform(scaleX: 1, y: 1)
+//                }
+            }
             
             secondAnimationDone = true
         }else if timerTime > 6{
@@ -50,7 +61,7 @@ class IntroAnimationVC: UIViewController {
     
     func moveIt(_ imageView: UILabel,_ speed:CGFloat) {
         let speeds = speed
-        UIView.animate(withDuration: TimeInterval(0.3), delay: 0.0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: TimeInterval(0.5), delay: 0.0, options: .curveLinear, animations: {
             imageView.frame.origin.x = self.view.frame.size.width/2 - 75
         }, completion: { (_) in
             self.moveIt(imageView, speeds)

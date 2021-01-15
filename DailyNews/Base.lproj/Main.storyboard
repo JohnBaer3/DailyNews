@@ -46,6 +46,7 @@
                         <outlet property="forDateText" destination="bH6-Nz-Hpj" id="iW1-hA-THP"/>
                         <outlet property="mainView" destination="RCM-jQ-11i" id="7rk-Dl-K25"/>
                         <outlet property="newsText" destination="xN3-mm-xGw" id="gef-rZ-52j"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="aDy-Ch-eKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4e-IC-t6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,13 +56,14 @@
         <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainScreen" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainScreen" id="BYZ-38-t0r" customClass="MainScreen" customModule="DailyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JIi-Hi-NAe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

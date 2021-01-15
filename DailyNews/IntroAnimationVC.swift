@@ -47,15 +47,19 @@ class IntroAnimationVC: UIViewController {
             
             UIView.animate(withDuration: 0.95) { [weak self] in
                 self!.forDateText.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-             } completion: { _ in
-//                if self.countDownTimer > 1{
-//                    self.dailyText.transform = CGAffineTransform(scaleX: 1, y: 1)
-//                }
-            }
+             }
             
             secondAnimationDone = true
-        }else if timerTime > 6{
+        }else if timerTime > 3{
             //Animate to next screen
+            
+            timer.invalidate()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "mainScreen") as! MainScreen
+            nextViewController.modalPresentationStyle = .fullScreen
+            self.present(nextViewController, animated:true, completion: { () -> Void in
+                self.navigationController?.viewControllers.removeAll()
+            })
         }
     }
     

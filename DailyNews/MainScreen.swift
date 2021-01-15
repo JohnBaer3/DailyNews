@@ -8,7 +8,7 @@
 import UIKit
 
 class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+        
     //First, make a collectionView that you can scroll through
     private var collectionView: UICollectionView?
     var newsData: [NewsData] = []

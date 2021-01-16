@@ -58,6 +58,7 @@ class NewsCVC: UICollectionViewCell {
         contentView.addSubview(contentLabel)
         
         setUpLogo(newsData.newsPublication)
+        setUpReactionFaces()
     }
     
     func setUpBackgroundImage(_ newsImageURL: String){
@@ -75,6 +76,13 @@ class NewsCVC: UICollectionViewCell {
         contentView.bringSubviewToFront(logoImage)
     }
     
+    func setUpReactionFaces(){
+        let image = UIImage(named: "reactions")
+        let reactionFaceImage = UIImageView(image: image!)
+        reactionFaceImage.frame = CGRect(x: 75, y: contentView.frame.height - 80, width: contentView.frame.width-150, height: 80)
+        contentView.addSubview(reactionFaceImage)
+        contentView.bringSubviewToFront(reactionFaceImage)
+    }
     
     
     override func layoutSubviews(){
@@ -88,6 +96,11 @@ class NewsCVC: UICollectionViewCell {
         backgroundLabel.frame = CGRect(x: 0, y: height/2+50, width: width, height: 500)
         titleLabel.frame = CGRect(x: width/2-titleFontWidth/2, y: height/2+40, width: titleFontWidth, height: 240)
         contentLabel.frame = CGRect(x: width/2-swipeFontWidth/2, y: height/2+220, width: swipeFontWidth, height: 150)
+    }
+    
+    
+    func clicked(){
+        print("was supposed to pop up news article :(")
     }
     
     

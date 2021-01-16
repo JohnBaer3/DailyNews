@@ -52,7 +52,6 @@ class IntroAnimationVC: UIViewController {
             secondAnimationDone = true
         }else if timerTime > 3{
             //Animate to next screen
-            
             timer.invalidate()
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "mainScreen") as! MainScreen

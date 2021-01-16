@@ -37,6 +37,7 @@ class NewsCVC: UICollectionViewCell {
         backgroundLabel.layer.masksToBounds = true
         return backgroundLabel
     }()
+        
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -94,7 +95,4 @@ class NewsCVC: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("Oops! RestaurantCVC error")
     }
-    
-    
-    
 }

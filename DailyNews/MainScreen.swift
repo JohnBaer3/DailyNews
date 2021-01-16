@@ -59,18 +59,11 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //Protocol to that specific
+        let currCell = collectionView.cellForItem(at: indexPath) as! NewsCVC
+        currCell.clicked()
     }
     
-    
-    
-    
-    
-    
-
     
     func populateNewsData(){
         newsData.append(NewsData(newsTitle: "Dr. Harold Bornstein, Trump's former personal physician, dead at 73",

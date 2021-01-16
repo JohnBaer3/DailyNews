@@ -10,7 +10,6 @@ import QuartzCore
 
 class NewsCVC: UICollectionViewCell {
     static let identifier = "NewsCell"
-
     
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()

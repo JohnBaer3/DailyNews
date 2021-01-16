@@ -9,18 +9,17 @@ import UIKit
 
 class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
-    //First, make a collectionView that you can scroll through
+    @IBOutlet var topCompletionBar: [UIView]!
+    
     private var collectionView: UICollectionView?
     var newsData: [NewsData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         populateNewsData()
         
         configureCollectionView()
-        
-        startScrolling()
     }
     
     func configureCollectionView(){
@@ -36,16 +35,14 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         collectionView?.dataSource = self
         collectionView?.delegate = self
         view.addSubview(collectionView!)
+        for bar in topCompletionBar{
+            bar.superview?.bringSubviewToFront(bar)
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
-    }
-    
-    func startScrolling(){
-        //Start a timer that animates the first cylinder getting filled
-        //When it fills, move collectionView to the next
     }
     
     
@@ -57,8 +54,22 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let newsCell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCVC.identifier,
                                                           for: indexPath) as! NewsCVC
         newsCell.configure(with: newsData[indexPath.row])
+        newsCell.tag = indexPath.row
         return newsCell
     }
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //Protocol to that specific
+    }
+    
+    
+    
+    
+    
+    
 
     
     func populateNewsData(){
@@ -77,3 +88,16 @@ class MainScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
+
+extension MainScreen: UIScrollViewDelegate{
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let collectionViewPos = collectionView?.visibleCells.first{
+            for i in 0 ..< collectionViewPos.tag{
+                topCompletionBar[i].backgroundColor = .darkGray
+            }
+            for i in collectionViewPos.tag ..< 5{
+                topCompletionBar[i].backgroundColor = .systemGray3
+            }
+        }
+    }
+}

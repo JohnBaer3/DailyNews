@@ -5,7 +5,7 @@ Displays the day's biggest news in a Instagram-story esque manner for easier dig
 
 ### Technical write-up 
 
-Unfortunately, this week was more of a cautionary tale than a technical one. After wasting 2 days, I attempted to implement a Rate-Your-Driving app that kept track of how well an user drove inside the while lines of the road. After trying several trivial implementations of detecting white lines on a road using OpenCV, the accuracies of the programs were nowhere near the level I wanted them to be. The programs would completely fail when the lines are somewhat faded, and although with more time and more tuning I think such a program would have been reasonably made, I had 2 days left of the 7 days. 
+Unfortunately, this week was more of a cautionary tale than a technical one. After wasting 2 days, I attempted to implement a Rate-Your-Driving app that kept track of how well an user drove inside the while lines of the road. After trying several trivial implementations of detecting white lines on a road using OpenCV, the accuracies of the programs were nowhere near the level I wanted them to be. The programs would completely fail when the lines are somewhat faded, and although with more time and more tuning I think such a program would have been reasonably made, by that time 5 days had passed, and I had 2 days left of the 7 days. 
 
 <img src="https://github.com/JohnBaer3/DailyNews/blob/main/IMG_6958.PNG" width="200" height="400">
 
